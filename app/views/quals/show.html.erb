@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>資格詳細</h1>
+<p>
+  <strong>資格名:</strong>
+  <%= @qual.name %>
+</p>
+
+<p>
+  <strong>難易度:</strong>
+  <%= @qual.difficulty %>
+</p>
+
+<p>
+  <strong>合格率:</strong>
+  <%= @qual.passrate %>
+</p>
+
+<p>
+  <strong>取得状況:</strong>
+  <%= @qual.acquisition %>
+</p>
+<p class="no_print">
+<%= link_to '編集', edit_qual_path(@qual),class: "btn btn-primary" %> |
+<%= link_to '戻る', quals_path, class: "btn btn-default" %> |
+<button onClick="window.print();" class="btn btn-success">印刷</button>
+</p>
+</div>

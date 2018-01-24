@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>資格一覧</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>資格名</th>
+      <th>難易度</th>
+      <th>合格率</th>
+      <th>取得状況</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quals.each do |qual| %>
+      <tr>
+        <td><%= qual.name %></td>
+        <td><%= qual.difficulty %></td>
+        <td><%= qual.passrate %>%</td>
+        <td><%= qual.acquisition %></td>
+        <td><%= link_to '詳細', qual, class: "btn btn-primary" %></td>
+        <td><%= link_to '編集', edit_qual_path(qual), class: "btn btn-success" %></td>
+        <td><%= link_to '削除', qual, method: :delete, data: { confirm: '削除していいですか?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '資格追加', new_qual_path, class: "btn btn-primary" %>
+</div>

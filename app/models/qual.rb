@@ -1,0 +1,2 @@
+class Qual < ApplicationRecord
+end

@@ -1,0 +1,37 @@
+<%= form_with(model: qual, local: true) do |form| %>
+  <% if qual.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qual.errors.count, "error") %> prohibited this qual from being saved:</h2>
+
+      <ul>
+      <% qual.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name,"資格名" %>
+    <%= form.text_field :name, id: :qual_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :difficulty,"難易度" %>
+    <%= form.text_field :difficulty, id: :qual_difficulty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :passrate,"合格率" %>
+    <%= form.number_field :passrate, id: :qual_passrate %>%
+  </div>
+
+  <div class="field">
+    <%= form.label :acquisition,"取得状況" %>
+    <%= form.text_field :acquisition, id: :qual_acquisition %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "追加",class: "btn btn-primary"%>
+  </div>
+<% end %>
